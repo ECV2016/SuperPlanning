@@ -83,9 +83,9 @@ var app = {
         // Detect when group is choose
         that.selectGroup.on('change', function(){
             // Get ID of selected group
-            var currentGroup = $(this).val();
+            that.currentGroup = $(this).val();
 
-            that.getAllCourses(currentGroup);
+            that.getAllCourses(that.currentGroup);
         });
     },
 
@@ -116,7 +116,7 @@ var app = {
     getCourseDay: function(day){
         $.ajax({
             method: 'GET',
-            url: '/courses/' + day,
+            url: '/courses/' + this.currentGroup + '/' + day,
             datatype: 'json',
             success: function(data){
                 var dataParsed = $.parseJSON(data);
