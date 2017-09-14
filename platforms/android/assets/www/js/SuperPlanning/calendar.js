@@ -18,7 +18,7 @@ function onDeviceReady(){
   calOptions.calendarName = calendarName;
 
   /* Create Events */
-  function test (title, eventLocation, notes, startDate, endDate, breakFunction) {
+  function createEvent (title, eventLocation, notes, startDate, endDate) {
     var myEvent = {
       title: title,
       eventLocation: eventLocation,
@@ -28,18 +28,10 @@ function onDeviceReady(){
     };
 
     window.plugins.calendar.createEventInteractivelyWithOptions(myEvent.title, myEvent.eventLocation, myEvent.notes, myEvent.startDate, myEvent.endDate, calOptions, success, error);
-
-    if (breakFunction === true) {
-      test('Mon test ULTIME 2', 'ECV Digital Paris', 'Notes', new Date(2017,9,16,0,0,0,0,0), new Date(2017,9,16,0,0,0,0,0), false);
-      return;
-    };
   }
 
+  createEvent('Mon test ULTIME 5', 'ECV Digital Paris', 'Notes', new Date(2017,9,16,0,0,0,0,0), new Date(2017,9,16,0,0,0,0,0));
 
-
-  test('Mon test ULTIME 5', 'ECV Digital Paris', 'Notes', new Date(2017,9,16,0,0,0,0,0), new Date(2017,9,16,0,0,0,0,0), true);
-
-  //window.plugins.calendar.getCalendarOptions();
   /* Open Calendar */
   window.plugins.calendar.openCalendar();
 }
