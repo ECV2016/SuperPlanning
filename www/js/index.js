@@ -111,6 +111,31 @@ var app = {
 
         this.getSingleCourse(id);
     }
+
+    loadCourseDay: function(day){
+        $.ajax({
+            method: 'GET',
+            url: '/courses/' + day,
+            datatype: 'json',
+            success: function(data){
+                var dataParsed = $.parseJSON(data);
+                this.onGetCourses(dataParsed);
+            }
+        })
+        this.eventCourseDay();
+    }
+
+    eventCourseDay: function(){
+        jQuery('body').on('click', '.day', function(e){
+              e.preventDefault();
+              var date = $(this).data('date');
+              this.loadCourseDay(date);
+        });
+    }
+
+    onGetCourses: function(data){
+
+    }
 };
 
 app.initialize();
