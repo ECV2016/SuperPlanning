@@ -6,12 +6,26 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="app/css/main.css">
-        <title>Hello World</title>
+        <title>SuperPlanning</title>
     </head>
     <body>
         <!-- Etape 1 : On choisit sa promotion -->
-        <select name="promotion" id="jsChoosePromotion"></select>
+        <div data-role="page" id="promotion">
+            <select name="promotion" id="jsChoosePromotion"></select>
+        </div>
 
+        <!-- Etape 2 : On accède à la liste de tous les cours du jour -->
+        <div data-role="page" id="courses">
+            Listing des cours
+        </div>
+
+        <!-- Etape 3 : On accède à la page du cours -->
+        <div data-role="page" id="course">
+            Details du cours
+        </div>
+
+        <!--<script type="text/javascript" src="app/js/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" src="app/js/jquery-mobile.js"></script>
         <script type="text/javascript" src="app/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="app/js/app.js"></script>
