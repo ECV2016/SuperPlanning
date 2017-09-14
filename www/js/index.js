@@ -50,6 +50,30 @@ var app = {
                 "<div class='repos_name'><a href="+element.owner.url+">"+element.owner.login+"</a></div>" +
                 "</li>";
         });
+    },
+
+    onGetSingleCourse: function(data){
+        $("#singleCourse").append();
+    },
+
+    getSingleCourse: function(id){
+        jQuery.ajax({
+          url: '/course/'+id,
+          dataType: "json",
+          method : 'GET',
+          success: function(data){
+            this.onGetSingleCourse(data);
+          }
+        });
+    },
+
+    eventSingleCourse: function(){
+        var id;
+        $(".course a").click(function() {
+            id = $(this).data('id');
+        });
+
+        this.getSingleCourse(id);
     }
 
     loadCourseDay: function(day){
