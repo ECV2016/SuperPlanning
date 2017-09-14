@@ -27,7 +27,30 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        this.loadListGroups();
+        // EVENT --> on choisi son groupe
+        // Load les cours du groupe
+        // EVENT --> choisir son jour
+        // Afficher les cours du jour
+        // EVENT --> cliquer sur un cours pour voir le détail
+        // Afficher le détail du cours
     },
+
+    // Load groups
+    loadListGroups: function(){
+        var request = new XMLHttpRequest();
+        request.open("GET", "/groups", false);
+        request.send(null);
+        var my_JSON_object = JSON.parse(request.responseText);
+        var select = $('#groups');
+        my_JSON_object.forEach(function(element) {
+            innerHtml += "<li class='list__item'>" +
+                "<div class='name'><a href='"+element.html_url+"'>"+element.name+"</a></div>" +
+                "<div class='avatar'><img src='"+element.owner.avatar_url+"' alt=''></div>" +
+                "<div class='repos_name'><a href="+element.owner.url+">"+element.owner.login+"</a></div>" +
+                "</li>";
+        });
+    }
 };
 
 app.initialize();
