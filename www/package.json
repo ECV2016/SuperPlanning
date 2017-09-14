@@ -1,7 +1,7 @@
 {
-  "name": "tutos",
+  "name": "SuperPlanning",
   "version": "1.0.0",
-  "description": "Les tutos webdesign est un site de tutoriels simple accessible à tous.",
+  "description": "Le planning des cours de l ecv 2.0",
   "main": "Gulpfile.js",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/asimonin/Tutos"
+    "url": "https://github.com/ECV2016/SuperPlanning"
   },
   "author": "Alexandre Simonin",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.0",
-    "ion-rangeslider": "^2.1.8"
+    "gulp-sourcemaps": "^2.4.0"
   }
 }
