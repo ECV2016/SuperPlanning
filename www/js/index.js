@@ -27,9 +27,8 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        // Load all enable groups
         this.loadListGroups();
-        // EVENT --> on choisi son groupe
-        // Load les cours du groupe
         // EVENT --> choisir son jour
         // Afficher les cours du jour
         // EVENT --> cliquer sur un cours pour voir le détail
@@ -38,17 +37,58 @@ var app = {
 
     // Load groups
     loadListGroups: function(){
-        var request = new XMLHttpRequest();
-        request.open("GET", "/groups", false);
-        request.send(null);
-        var my_JSON_object = JSON.parse(request.responseText);
-        var select = $('#groups');
-        my_JSON_object.forEach(function(element) {
-            innerHtml += "<li class='list__item'>" +
-                "<div class='name'><a href='"+element.html_url+"'>"+element.name+"</a></div>" +
-                "<div class='avatar'><img src='"+element.owner.avatar_url+"' alt=''></div>" +
-                "<div class='repos_name'><a href="+element.owner.url+">"+element.owner.login+"</a></div>" +
-                "</li>";
+        var that = this;
+        that.selectGroup = $('#groups');
+        // Get groups
+        $.ajax({
+            url: '/groups',
+            dataType: "json",
+            method : 'GET',
+            success: function(data){
+                var groups = JSON.parse(data);
+                that.onLoadListGroups(groups);
+            }
+        });
+
+        // LOAD Event Get all courses from a group
+        that.eventGetAllCourses();
+    },
+
+    onLoadListGroups: function(groups){
+        var that = this;
+        groups.each(function(element){
+            // Create option for each group
+            var option = "<option value='"+element.id+"'>"+element.name+"</option>";
+            that.selectGroup.append(option);
+        });
+    },
+
+    getAllCourses: function(group){
+        $.ajax({
+            url: "/courses/"+group,
+            dataType: "json",
+            method : 'GET',
+            success: function(data){
+                var courses = JSON.parse(data);
+                that.onGetAllCourses(courses);
+            }
+        });
+    },
+
+    onGetAllCourses: function(courses){
+        courses.each(function(element){
+
+        });
+    },
+
+    eventGetAllCourses: function(){
+        var that = this;
+        // Detect when group is choose
+        that.selectGroup.on('change', function(){
+            // Get ID of selected group
+            var currentGroup = $(this).val();
+
+            that.getAllCourses(currentGroup);
         });
     },
 
