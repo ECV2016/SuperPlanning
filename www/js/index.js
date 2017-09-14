@@ -29,6 +29,7 @@ var app = {
     onDeviceReady: function() {
         // Load all enable groups
         this.loadListGroups();
+        this.eventCourseDay();
     },
 
     // Load groups
@@ -110,7 +111,7 @@ var app = {
         });
 
         this.getSingleCourse(id);
-    }
+    },
 
     loadCourseDay: function(day){
         $.ajax({
@@ -121,9 +122,10 @@ var app = {
                 var dataParsed = $.parseJSON(data);
                 this.onGetCourses(dataParsed);
             }
-        })
-        this.eventCourseDay();
-    }
+        });
+
+        this.eventSingleCourse();
+    },
 
     eventCourseDay: function(){
         jQuery('body').on('click', '.day', function(e){
@@ -131,9 +133,9 @@ var app = {
               var date = $(this).data('date');
               this.loadCourseDay(date);
         });
-    }
+    },
 
-    onGetCourses: function(data){
+    onGetCourses: function(courses){
 
     }
 };
