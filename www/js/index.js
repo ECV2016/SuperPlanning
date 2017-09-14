@@ -29,10 +29,6 @@ var app = {
     onDeviceReady: function() {
         // Load all enable groups
         this.loadListGroups();
-        // EVENT --> choisir son jour
-        // Afficher les cours du jour
-        // EVENT --> cliquer sur un cours pour voir le détail
-        // Afficher le détail du cours
     },
 
     // Load groups
@@ -92,7 +88,7 @@ var app = {
         });
     },
 
-    onGetSingleCourse: function(data){
+    onGetSingleCourse: function(course){
         $("#singleCourse").append();
     },
 
