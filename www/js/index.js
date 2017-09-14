@@ -30,6 +30,7 @@ var app = {
         // Load all enable groups
         this.loadListGroups();
         this.eventCourseDay();
+        this.getAllCourses(1);
     },
 
     // Load groups
@@ -38,11 +39,12 @@ var app = {
         that.selectGroup = $('#groups');
         // Get groups
         $.ajax({
-            url: '/groups',
+            url: "js/groups.json",
             dataType: "json",
             method : 'GET',
             success: function(data){
-                var groups = JSON.parse(data);
+                var groups = data.groups;
+                console.log(groups);
                 that.onLoadListGroups(groups);
             }
         });
@@ -53,7 +55,7 @@ var app = {
 
     onLoadListGroups: function(groups){
         var that = this;
-        groups.each(function(element){
+        $.each(groups, function(element){
             // Create option for each group
             var option = "<option value='"+element.id+"'>"+element.name+"</option>";
             that.selectGroup.append(option);
@@ -61,19 +63,21 @@ var app = {
     },
 
     getAllCourses: function(group){
+        var that = this;
         $.ajax({
-            url: "/courses/"+group,
+            url: "js/planning.json",
             dataType: "json",
             method : 'GET',
             success: function(data){
-                var courses = JSON.parse(data);
+                var courses = data.courses;
                 that.onGetAllCourses(courses);
+                console.log(courses);
             }
         });
     },
 
     onGetAllCourses: function(courses){
-        courses.each(function(element){
+        $.each(courses, function(element){
 
         });
     },
