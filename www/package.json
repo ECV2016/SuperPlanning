@@ -1,0 +1,27 @@
+{
+  "name": "tutos",
+  "version": "1.0.0",
+  "description": "Les tutos webdesign est un site de tutoriels simple accessible à tous.",
+  "main": "Gulpfile.js",
+  "private": true,
+  "scripts": {
+    "test": "gulp watch",
+    "watch": "gulp watch",
+    "dev": "gulp web-dev",
+    "prod": "gulp dist-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/asimonin/Tutos"
+  },
+  "author": "Alexandre Simonin",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "ion-rangeslider": "^2.1.8"
+  }
+}
