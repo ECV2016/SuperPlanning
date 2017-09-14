@@ -16,11 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ var events = [
+    {
+        id: 1,
+        name: "test1",
+        startDate: "2018-02-23",
+        status: "En cours"
+    },
+    {
+        id: 2,
+        name: "test2",
+        startDate: "2018-02-24",
+        status : "Annulée"
+    }
+];
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         this.notifications = notifications;
+
     },
 
     // deviceready Event Handler
@@ -29,9 +44,12 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        this.notifications.send();
+        this.onGetNotifs(events);
     },
-    
+
+    onGetNotifs: function(events) {
+        this.notifications.send(events);
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);

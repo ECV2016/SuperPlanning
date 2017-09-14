@@ -1,11 +1,12 @@
 var notifications = {
-
-	send: function(){
-		var date = new Date();
-		cordova.plugins.notification.local.schedule({
-		    id: 1,
-		    title: "Message Title",
-		    message: "Message Text"
+	send: function(events){
+		var i = 1;
+		events.forEach(function(event){
+			event.id = i;
+			event.title = event.name;
+			event.text = event.startDate+" "+event.status;
+			i++;
 		});
+		cordova.plugins.notification.local.schedule(events);
 	}
 };

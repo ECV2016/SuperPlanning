@@ -21,6 +21,7 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         this.notifications = notifications;
+
     },
 
     // deviceready Event Handler
@@ -29,9 +30,12 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        this.notifications.send();
+        this.onGetNotifs(events);
     },
-    
+
+    onGetNotifs: function(events) {
+        this.notifications.send(events);
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
