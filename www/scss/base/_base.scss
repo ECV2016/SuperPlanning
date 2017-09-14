@@ -1,0 +1,27 @@
+// _base.scss
+
+html,
+body {
+	font-family: font(primary);
+}
+
+.container {
+	width: 98%;
+	margin: auto;
+
+	@include respond-to('large') {
+		position: relative;
+		width: calc(100% - 250px);
+		margin-left: 250px;
+
+		&__inner {
+			width: 95%;
+			margin: 30px auto;
+		}
+	}
+}
+
+.container-normal {
+	width: 98%;
+	margin: auto;
+}

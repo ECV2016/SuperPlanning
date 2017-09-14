@@ -1,0 +1,19 @@
+// _m-breadcrumb.scss
+
+.breadcrumb {
+  background: url('../../images/motif.png') repeat;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 30px;
+
+  a {
+    text-decoration: none;
+    color: color(secondary);
+    @include transition();
+
+    &:hover {
+      color: color(secondary, dark);
+      @include transition();
+    }
+  }
+}

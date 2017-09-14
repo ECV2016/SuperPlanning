@@ -1,0 +1,82 @@
+// _m-sommaire.scss
+
+.sommaire {
+  background-color: color(secondary);
+  border-right: 3px solid color(primary);
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  top: 0; left: 0;
+
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 40px 0;
+    border-bottom: 3px solid color(secondary, dark);
+  }
+
+  .sommaire-list {
+
+    &__item {
+      position: relative;
+      color: color(foreground, invert);
+      font-family: font(secondary);
+      font-size: 18px;
+      @include transition();
+
+      &.is-open {
+        background-color: color(secondary, dark);
+        @include transition();
+
+        .jsOpenSubLevel {
+          border-bottom: 3px solid color(primary);
+          @include transition();
+        }
+      }
+      &:hover {
+        background-color: color(secondary, dark);
+        @include transition();
+      }
+
+      a {
+        display: block;
+        color: color(foreground, invert);
+        text-decoration: none;
+        cursor: pointer;
+        padding: 10px 15px 8px 15px;
+        @include transition();
+
+        &.jsOpenSubLevel {
+          position: relative;
+          border-bottom: 3px solid color(secondary);
+          z-index: 9;
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        right: 15px; top: 8px;
+        width: 25px;
+      }
+
+      &__list2 {
+        width: 100%;
+        display: none;
+        padding-bottom: 15px;
+
+        &__item2 {
+          list-style: none;
+
+          a {
+            padding: 15px 15px 0 15px;
+          }
+
+          &.list3 {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}

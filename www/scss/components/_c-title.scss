@@ -1,0 +1,27 @@
+// _c-title.scss
+
+h1, h2 {
+  &.title {
+    font-family: font(secondary);
+    color: color(foreground, invert);
+
+    &--invert {
+      color: color(foreground);
+    }
+  }
+
+  .container .container__inner & {
+    color: color(secondary, dark);
+    font-family: font(secondary);
+  }
+}
+
+p {
+  .container .container__inner & {
+    font-family: font(primary);
+    font-size: 14px;
+    color: color(secondary, dark);
+    line-height: 24px;
+    margin: 10px 0;
+  }
+}

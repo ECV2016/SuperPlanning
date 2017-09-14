@@ -1,0 +1,66 @@
+// _variables.scss
+
+$font-size-base: 16px;
+$transition-duration: 300ms;
+$ease: ease-in-out;
+$wrapper-width: 1200px;
+
+//-------------------------------------------------------------------//
+
+// Colors
+$color-key: 'base' !default;
+$colors: (
+  'primary': (
+    'base': #fccb42,
+  ),
+  'secondary': (
+    'base': #455a64,
+    'dark': #313e44
+  ),
+  'foreground':(
+    'base': #131313,
+    'light': #2b2b2b,
+    'invert': #fff,
+  ),
+  'background': (
+    'base':#fff,
+    'light':#eee,
+    'invert':#131313,
+  ),
+  'gray': (
+    'base': #ececec,
+    'light': #f7f7f7,
+    'middle': #aaa,
+    'dark': #5a5a5a,
+    'invert': #131313,
+  ),
+  'social': (
+    'facebook' : #2956a8,
+    'twitter' : #3fcad6,
+    'email' : #ffffff,
+  ),
+);
+
+/// Fonts
+$font-key: 'base' !default;
+$fonts: (
+  'primary': (
+    'base': ('Open Sans', Arial, sans-serif)
+  ),
+  'secondary': (
+    'base':('Alegreya', 'Open sans', Arial, sans-serif)
+  ),
+  'icon': (
+    'base':('ao-icon-tutos')
+  )
+);
+
+// Breakpoints - mobile first
+$breakpoints: (
+  'small': (min-width: 480px),
+  'medium': (min-width: 750px),
+  'large': (min-width: 1024px),
+  'desktop': (min-width: 1240px),
+  'huge': (min-width: 1440px),
+  'insane': (min-width: 2560px) // >4K ('-.-)
+);

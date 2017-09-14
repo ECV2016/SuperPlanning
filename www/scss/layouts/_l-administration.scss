@@ -1,0 +1,234 @@
+// _l-administration.scss
+
+.administration {
+  overflow: hidden;
+
+  .admin-form {
+    margin-top: 30px;
+    width: 100%;
+
+    @include respond-to('medium') {
+      width: 50%;
+      float: left;
+    }
+
+    &.small {
+      width: 30%;
+    }
+
+    &__line {
+      margin: 15px 0;
+
+      .wisiwyg {
+        margin: 0 0 5px 0;
+
+        input, select {
+          min-width: 40px;
+          text-align: center;
+          border: 0;
+          padding: 5px 8px;
+          font-family: font(primary);
+          font-size: 12px;
+          cursor: pointer;
+          outline: none;
+          background-color: #ececec;
+
+          &.active {
+            background-color: color(secondary, dark);
+            color: color(foreground, invert);
+          }
+        }
+        select {
+          border-radius: 0;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+        }
+      }
+
+      .container-textarea {
+        overflow: hidden;
+      }
+
+      #get-resultat {
+        float: left;
+        margin: 60px 15px;
+
+        min-width: 40px;
+        text-align: center;
+        border: 0;
+        padding: 5px 8px;
+        font-family: font(primary);
+        font-size: 12px;
+        cursor: pointer;
+        outline: none;
+        background-color: #ececec;
+      }
+
+      label {
+        display: block;
+        font-family: font(secondary);
+        font-weight: 700;
+      }
+      .input,
+      .select,
+      .textarea {
+        width: 100%;
+        height: 30px;
+        padding: 15px;
+        border : 1px solid color('gray', middle);
+        font-family: font(primary);
+        font-size: 12px;
+
+        @include respond-to(medium) {
+          //width: 50%;
+        }
+      }
+      .select {
+        border-radius: 0;
+        background-color: color(background);
+      }
+      .textarea {
+        resize: none;
+        height: 150px;
+        width: 40%;
+        float: left;
+        outline: none;
+      }
+    }
+  }
+  .apercu {
+    width: 100%;
+    border: solid 1px color('gray', middle);
+    padding: 30px;
+
+    @include respond-to('medium') {
+      margin: 64px 5% 0 5%;
+      width: 60%;
+      float: left;
+    }
+
+    &__level1,
+    &__sublevel2,
+    &__sublevel3 {
+      position: relative;
+
+      .poids {
+        position: absolute;
+        left: 175px;
+        top: 8px;
+        color: color(foreground, invert);
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .slug {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        overflow: hidden;
+        font-style: italic;
+        font-size: 13px;
+      }
+
+      input {
+        display: inline-block;
+        width: 200px;
+        color: color(foreground);
+        border: 0;
+        padding: 5px 30px 5px 5px;
+        margin: 1px 0;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      input:disabled {
+        color: color(foreground, invert);
+      }
+      a {
+        color: blue;
+        font-size: 12px;
+        margin: 0 6px;
+      }
+      .jsUpdateItemLink,
+      .jsCancelUpdateItemLink {
+        display: none;
+      }
+    }
+    &__level1 {
+      input {
+        border-bottom: solid 1px color(secondary, dark);
+      }
+      input:disabled {
+        background-color: color(secondary, dark);
+        border: solid 1px color(secondary, dark);
+      }
+    }
+    &__sublevel2 {
+      padding-left: 30px;
+
+      .poids {
+        left: 205px;
+      }
+
+      input {
+        border-bottom: solid 1px color(secondary);
+      }
+      input:disabled {
+        background-color: color(secondary);
+        border: solid 1px color(secondary);
+      }
+    }
+    &__sublevel3 {
+      padding-left: 60px;
+
+      .poids {
+        left: 235px;
+      }
+
+      input {
+        border-bottom: solid 1px color('gray', middle);
+      }
+      input:disabled {
+        background-color: color('gray', middle);
+        border: solid 1px color('gray', middle);
+      }
+    }
+  }
+  hr {
+    margin: 20px 0;
+  }
+  table {
+    width: 100%;
+    tr {
+      background-color: color('gray');
+
+      td {
+        a {
+          width: 50%;
+          text-align: center;
+          color: blue;
+        }
+        .action_delete {
+          float: left;
+        }
+        .action_edit {
+          float: right;
+        }
+      }
+    }
+    th {
+      background-color: color('secondary', dark);
+      color: color(primary);
+      font-weight: 300;
+
+      &.action {
+        width: 200px;
+      }
+      &.id {
+        width: 50px;
+      }
+    }
+    th, td {
+      padding: 5px;
+    }
+  }
+} // end of .administration

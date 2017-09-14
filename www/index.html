@@ -1,33 +1,97 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="app/css/main.css">
-        <title>SuperPlanning</title>
-    </head>
-    <body>
-        <!-- Etape 1 : On choisit sa promotion -->
-        <div data-role="page" id="promotion">
-            <select name="promotion" id="jsChoosePromotion"></select>
-        </div>
+<head>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="app/css/main.css">
+    <title>SuperPlanning</title>
+</head>
+<body>
+<!-- Etape 1 : On choisit sa promotion -->
+<div data-role="page" id="promotion">
+    <select name="promotion" id="jsChoosePromotion"></select>
+</div>
 
-        <!-- Etape 2 : On accède à la liste de tous les cours du jour -->
-        <div data-role="page" id="courses">
-            Listing des cours
-        </div>
+<!-- Etape 2 : On accède à la liste de tous les cours du jour -->
+<div data-role="page" id="courses">
+    <div class="title_promotion">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <thead>
+            <tr>      
+                <th data-priority="1">PROMOTION</th>
+                <th data-priority="2">WEB DEVELOPPEMENT</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-data-cour">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <thead>
+            <tr>      
+                <th data-priority="1">Cour</th>
+                <th data-priority="2">Lieu</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>      
+                <th>Mobile Application</th>
+                <td>Quai de la loire</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-        <!-- Etape 3 : On accède à la page du cours -->
-        <div data-role="page" id="course">
-            Details du cours
-        </div>
+<!-- Etape 3 : On accède à la page du cours -->
+<div data-role="page" id="course">
+    <div class="title_promotion">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <thead>
+            <tr>      
+                <th data-priority="1">PROMOTION</th>         
+                <th data-priority="2">WEB DEVELOPPEMENT</th>
+            </tr>     
+            </thead>
+        </table>
+    </div>
+    <div class="title_cour">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <thead>
+            <tr>      
+                <th data-priority="1">Mobile Application</th>         
+                <th data-priority="2">Quai de la loire</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-data-cour">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <tbody>
+            <tr>
+                <th>INTERVENANT</th>
+                <td>prof</td>       
+            </tr>
+            <tr>
+                <th>HEURE</th>
+                <td>0900-1200</td>       
+            </tr>
+            <tr>
+                <th>DESCRIPTION</th>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, inventore.</td>      
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-        <!--<script type="text/javascript" src="app/js/jquery.mobile-1.4.5.min.js"></script>-->
-        <script type="text/javascript" src="app/js/jquery-mobile.js"></script>
-        <script type="text/javascript" src="app/js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="app/js/app.js"></script>
-    </body>
+<!--<script type="text/javascript" src="app/js/jquery.mobile-1.4.5.min.js"></script>-->
+<script type="text/javascript" src="app/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="app/js/jquery-mobile.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="app/js/app.js"></script>
+</body>
 </html>

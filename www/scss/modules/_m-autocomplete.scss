@@ -1,0 +1,25 @@
+// m_-autocomplete.scss
+
+.ui-menu {
+  z-index: 99;
+  background-color: color(secondary);
+  width: 300px !important;
+
+  &-item {
+    list-style: none;
+
+    &-wrapper {
+      background-color: color(secondary);
+      color: color(foreground, invert);
+      font-family: font(primary);
+      font-size: 12px;
+      display: block;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.ui-helper-hidden-accessible {
+  display: none;
+}

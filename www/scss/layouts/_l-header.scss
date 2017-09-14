@@ -1,0 +1,108 @@
+// _l-header.scss
+
+.main-header {
+  width: 100%; height: 52px;
+  background-color: color(secondary, dark);
+  border-bottom: 2px solid color(primary);
+  margin-bottom: 50px;
+
+  &__inner {
+    width: 1200px;
+    margin: auto;
+    display: table;
+  }
+
+  &__status,
+  &__action {
+    color: color(foreground, invert);
+    line-height: 50px;
+  }
+  &__status {
+    float: left;
+  }
+  &__action {
+    float: right;
+    line-height: 50px;
+    background-color: color(primary);
+    color: color(secondary, dark);
+    padding: 0 15px;
+    text-decoration: none;
+  }
+
+  .menu-header {
+    display: inline-block;
+    margin-left: 50px;
+    height: 50px;
+
+    &__item {
+      float: left;
+      list-style: none;
+      line-height: 50px;
+      color: color(foreground, invert);
+      border-right: 2px solid color(primary);
+      background-color: color(secondary);
+      cursor: pointer;
+
+      &:first-child {
+        border-left: 2px solid color(primary);
+      }
+
+      &__link {
+        position: relative;
+        display: block;
+        padding: 0 15px;
+        cursor: pointer;
+
+        a {
+          color: color(foreground, invert);
+          text-decoration: none;
+        }
+
+        &:hover {
+          .menu-header__second {
+            display: block;
+          }
+        }
+      }
+    }
+    &__second,
+    &__third {
+      position: absolute;
+      width: auto;
+      background-color: color(secondary);
+      left: -2px;
+      border-left: 2px solid color(primary);
+      min-width: 140px;
+      display: none;
+
+      &__item {
+        list-style: none;
+
+        &__link {
+          display: block;
+          color: color(foreground, invert);
+          text-decoration: none;
+          padding: 0 15px;
+          @include transition();
+          cursor: pointer;
+
+          &:hover {
+            background-color: color(secondary, dark);
+            @include transition();
+          }
+        }
+      }
+      .menu-header__item__link {
+        &:hover {
+          .menu-header__third {
+            display: block;
+          }
+        }
+      }
+    }
+    &__third {
+      top: 0;
+      left: 100%;
+    }
+  }
+}
