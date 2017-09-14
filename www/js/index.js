@@ -113,14 +113,14 @@ var app = {
         this.getSingleCourse(id);
     },
 
-    loadCourseDay: function(day){
+    getCourseDay: function(day){
         $.ajax({
             method: 'GET',
             url: '/courses/' + day,
             datatype: 'json',
             success: function(data){
                 var dataParsed = $.parseJSON(data);
-                this.onGetCourses(dataParsed);
+                this.onGetCourseDay(dataParsed);
             }
         });
 
@@ -131,11 +131,11 @@ var app = {
         jQuery('body').on('click', '.day', function(e){
               e.preventDefault();
               var date = $(this).data('date');
-              this.loadCourseDay(date);
+              this.getCourseDay(date);
         });
     },
 
-    onGetCourses: function(courses){
+    onGetCourseDay: function(courses){
 
     }
 };
